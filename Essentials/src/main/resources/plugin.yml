@@ -1350,6 +1350,8 @@ permissions:
     description: Allows access to the /tptoggle command
   essentials.tptoggle.others:
     description: Allows access to the /tptoggle command for other players
+  essentials.tptoggle.bypass:
+    description: Lets /tp and /tphere teleport players who turned their teleports off with /tptoggle
   essentials.tpr:
     description: Allows access to the /tpr command
   essentials.settpr:

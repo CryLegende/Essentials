@@ -164,6 +164,14 @@ public abstract class EssentialsCommand implements IEssentialsCommand {
         return ess.matchUser(server, sourceUser, searchTerm, getHidden, getOffline);
     }
 
+    /**
+     * Whether /tptoggle stops {@code user} from teleporting {@code target}: the target turned teleports off and
+     * {@code user} does not hold essentials.tptoggle.bypass.
+     */
+    protected boolean isTeleportBlocked(final User user, final User target) {
+        return !target.isTeleportEnabled() && !user.isAuthorized("essentials.tptoggle.bypass");
+    }
+
     @Override
     public final void run(final Server server, final User user, final String commandLabel, final Command cmd, final String[] args) throws Exception {
         final Trade charge = new Trade(this.getName(), ess);
